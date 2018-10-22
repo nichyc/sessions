@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+	<title>Memory Quiz</title>
+</head>
+
+<body>
+	{% if session['warning']==True %}<div id="warning"><font color="red">Warning: Please enter a number with no decimal points!</font></div>{% endif %}
+	
+	<div id="content">{% block content %}{% endblock %}</div>
+	
+	{% if session['hideReset']==False %}<div id="footer"><a href="/reset">Reset</a><br><br></div>{% endif %}
+</body>
+
+
+</html>

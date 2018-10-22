@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}Scorecard{% endblock %}
+
+{% block content %}
+	<h1>Your Score:</h1>
+	Score: {{ session['score'] }} / 5<br>
+	
+	<h1>Question 1</h1>
+	{% if session['answer1']!=2 %}
+	Correct Answer: 2 | Your Answer: <font color="red">{{ session['answer1'] }}</font><br>
+	{% endif %}
+	
+	{% if session['answer1']==2 %}
+	Correct Answer: 2 | Your Answer: <font color="green">{{ session['answer1'] }}</font><br>
+	{% endif %}
+
+	<h1>Question 2</h1>
+	{% if session['answer2']!=9 %}
+	Correct Answer: 9 | Your Answer: <font color="red">{{ session['answer2'] }}</font><br>
+	{% endif %}
+	
+	{% if session['answer2']==9 %}
+	Correct Answer: 9 | Your Answer: <font color='green'>{{ session['answer2'] }}</font><br>
+	{% endif %}
+	
+	<h1>Question 3</h1>
+	{% if session['answer3']!=120 %}
+	Correct Answer: 120 | Your Answer: <font color="red">{{ session['answer3'] }}</font><br>
+	{% endif %}
+	
+	{% if session['answer3']==120 %}
+	Correct Answer: 120 | Your Answer: <font color='green'>{{ session['answer3'] }}</font><br>
+	{% endif %}
+	
+	<h1>Question 4</h1>
+	{% if session['answer4']!=112 %}
+	Correct Answer: 112 | Your Answer: <font color="red">{{ session['answer4'] }}</font><br>
+	{% endif %}
+	
+	{% if session['answer4']==112 %}
+	Correct Answer: 112 | Your Answer: <font color='green'>{{ session['answer4'] }}</font><br>
+	{% endif %}
+	
+	<h1>Surprise Question</h1>
+	{% if session['trickAnswer']!=session['answer1'] %}
+	Correct Answer: {{ session['answer1'] }} | Your Answer: <font color="red">{{ session['trickAnswer'] }}</font><br>
+	{% endif %}
+	
+	{% if session['trickAnswer']==session['answer1'] %}
+	Correct Answer: {{ session['answer1'] }} | Your Answer: <font color='green'>{{ session['trickAnswer'] }}</font><br>
+	{% endif %}
+
+<br><br>
+{% endblock %}

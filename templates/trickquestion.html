@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}Surprise Question!{% endblock %}
+
+{% block content %}
+	<h1>Surprise Question!</h1>
+
+<form action={{ url_for('render_scorecard') }} method="POST">
+	What was your answer to Question 1?<br>
+	(Not necessarily the correct answer, but the one you gave)<br>
+	<input type="text" name="trickAnswer" value="Your Answer">
+	<input type="submit" value="Submit"><br><br>
+</form>
+
+{% endblock %}
